@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --font-opensans: "Open Sans", sans-serif;
+}
+
+.huddle-shell {
+  background-color: #6b49ac;
+  background-image: url('/images/bg-desktop.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@keyframes headerEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes illustrationEntrance {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes contentEntrance {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes footerEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-header {
+  animation: headerEntrance 650ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-illustration {
+  animation: illustrationEntrance 800ms 100ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-content {
+  animation: contentEntrance 700ms 180ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-footer {
+  animation: footerEntrance 600ms 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (max-width: 767px) {
+  .huddle-shell {
+    background-image: url('/images/bg-mobile.svg');
+    background-position: top center;
+    background-size: 100% auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+
+  .animate-header,
+  .animate-illustration,
+  .animate-content,
+  .animate-footer {
+    animation: none;
+  }
+}
+
+
+.social-icon {
+  background-color: white;
+  transition: background-color 200ms ease;
+}
+
+.social-icon:hover {
+  background-color: #ff51be;
+}
